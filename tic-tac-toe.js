@@ -59,7 +59,8 @@ class Board {
   }
 
   checkDiagonalForWinner (symbol) {
-    if (this.board[0][0] === symbol && this.board[1][1] === symbol && this.board[2][2] === symbol){
+    if (this.board[0][0] === symbol && this.board[1][1] === symbol && this.board[2][2] === symbol ||
+        this.board[0][2] === symbol && this.board[1][1] === symbol && this.board[2][0] === symbol) {
       return true;
     }
     return false;
@@ -67,8 +68,8 @@ class Board {
 
   checkForColWinner(symbol) {
     if (this.board[0][0] === symbol && this.board[1][0] === symbol && this.board[2][0] === symbol ||
-      this.board[0][1] === symbol && this.board[1][1] === symbol && this.board[2][1] === symbol ||
-      this.board[0][2] === symbol && this.board[1][2] === symbol && this.board[2][2] === symbol) {
+        this.board[0][1] === symbol && this.board[1][1] === symbol && this.board[2][1] === symbol ||
+        this.board[0][2] === symbol && this.board[1][2] === symbol && this.board[2][2] === symbol) {
       return true;
     }
     return false;
